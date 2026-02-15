@@ -75,12 +75,20 @@
 
     <!-- Products -->
     <section class="w-2/3 mx-auto text-center my-10">
-      <h3 class="text-2xl font-bold">Our Products</h3>
-      <div id="pet-categories" class="menu menu-horizontal px-1">
+      <h3 class="text-2xl font-bold mb-4">Our Products</h3>
+      <!-- categories button -->
+      <div id="pet-categories" class="menu menu-horizontal px-1 gap-3">
         <ul>
-          <li class="font-semibold text-gray-500"><a>All</a></li>
+          <li
+            class="font-semibold text-gray-500 border-2 border-gray-400 rounded-3xl"
+          >
+            <a>All</a>
+          </li>
         </ul>
       </div>
+
+      <!-- All products -->
+      <div id="productsContainer" class="grid grid-cols-4 gap-2"></div>
     </section>
 
     <!-- script -->
