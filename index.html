@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- daisyUi -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav class="bg-base-100 shadow-sm">
+      <div class="navbar bg-base-100 shadow-y-sm w-2/3 mx-auto">
+        <div class="navbar-start">
+          <!-- <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul
+              tabindex="-1"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Home</a></li>
+              <li>
+                <a>Products</a>
+              </li>
+              <li><a>About</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div> -->
+          <a class="btn btn-ghost text-xl font-bold text-blue-600">SwiftCart</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li class="font-semibold text-gray-500"><a>Home</a></li>
+            <li class="font-semibold text-gray-500"><a>Products</a></li>
+            <li class="font-semibold text-gray-500"><a>About</a></li>
+            <li class="font-semibold text-gray-500"><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <i class="fa-solid fa-cart-arrow-down text-xl"></i>
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul
+              tabindex="-1"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Home</a></li>
+              <li>
+                <a>Products</a>
+              </li>
+              <li><a>About</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Products -->
+    <section class="w-2/3 mx-auto text-center my-10">
+      <h3 class="text-2xl font-bold">Our Products</h3>
+      <div id="pet-categories" class="menu menu-horizontal px-1">
+        <ul>
+          <li class="font-semibold text-gray-500"><a>All</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- script -->
+    <script src="./index.js"></script>
+  </body>
+</html>
