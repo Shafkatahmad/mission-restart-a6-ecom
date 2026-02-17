@@ -20,6 +20,7 @@
     <!-- tailwind css -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
+
   <body>
     <!-- nav bar -->
     <nav class="bg-base-100 shadow-sm">
@@ -45,14 +46,33 @@
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
-            <li class="font-semibold text-gray-500"><a>Home</a></li>
-            <li class="font-semibold text-gray-500"><a>Products</a></li>
+            <li id="homebtn" class="font-semibold text-gray-500">
+              <a>Home</a>
+            </li>
+            <li id="productsBtn" class="font-semibold text-gray-500">
+              <a>Products</a>
+            </li>
             <li class="font-semibold text-gray-500"><a>About</a></li>
             <li class="font-semibold text-gray-500"><a>Contact</a></li>
           </ul>
         </div>
-        <div class="navbar-end">
-          <i class="fa-solid fa-cart-arrow-down text-xl"></i>
+        <div class="navbar-end relative">
+          <div id="cartDetails" class="relative border border-green-900">
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+            <dialog id="my_modal_1" class="modal">
+              <div id="my_modal_1_container" class="modal-box">
+                <img id="cartDetailsImg" src="" alt="" />
+              </div>
+            </dialog>
+            <i class="fa-solid fa-cart-arrow-down text-xl cursor-pointer"></i>
+            <span
+              id="cartCount"
+              class="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+            >
+              0
+            </span>
+          </div>
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <i class="fa-solid fa-bars"></i>
@@ -75,7 +95,7 @@
 
     <!-- banner -->
     <section
-      class="hero min-h-screen border border-red-500"
+      class="hero min-h-screen border border-red-500 homePage"
       style="background-image: url(./assets/banner-image.png)"
     >
       <div class="hero-overlay"></div>
@@ -92,7 +112,7 @@
     </section>
 
     <!-- why choose us -->
-    <section class="p-10 bg-slate-100 mb-10">
+    <section class="p-10 bg-slate-100 mb-10 homePage">
       <div class="w-2/3 mx-auto">
         <div class="text-center">
           <h3 class="text-2xl font-bold mb-2">Why Choose Us</h3>
@@ -139,24 +159,77 @@
     </section>
 
     <!-- trending section -->
-    <section>
-      <h3>Trending Now</h3>
-      <div id="trendingNow" class="grid grid-cols-1 md:grid-cols-3"></div>
+    <section class="w-2/3 mx-auto homePage">
+      <h3 class="text-3xl font-bold">Trending Now</h3>
+      <div id="trendingNow" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+      <dialog id="my_modal_3" class="modal">
+        <div class="modalTrend-box bg-white rounded-2xl p-10">
+          <h3
+            id="modalTrendTitle"
+            class="text-black text-3xl font-bold mb-3"
+          ></h3>
+          <p id="modalTrendDescription" class="text-black mb-2"></p>
+          <p id="modalTrendPrice" class="text-black mb-2"></p>
+          <p id="modalTrendRating" class="text-black mb-2"></p>
+          <button class="bg-blue-500 px-3 py-2 text-white rounded-xl mb-2">
+            Add to cart
+          </button>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </section>
 
     <!-- Products -->
-    <section class="w-2/3 mx-auto my-10">
+    <section id="allProducts" class="w-2/3 mx-auto my-10 hidden">
       <div class="text-center mb-10">
         <h3 class="text-2xl font-bold mb-4">Our Products</h3>
         <!-- categories button -->
         <div id="pet-categories" class="menu menu-horizontal px-1 gap-3">
-          <ul>
-            <li
-              class="font-semibold text-gray-500 border-2 border-gray-400 rounded-3xl"
-            >
-              <a>All</a>
-            </li>
-          </ul>
+          <!-- <ul> -->
+          <button
+            id="all"
+            class="font-semibold text-gray-500 border-2 border-gray-400 p-3 rounded-3xl categoryBtn"
+          >
+            <!-- <a>All</a> -->
+            All
+          </button>
+          <dialog id="my_modal_4" class="modal">
+            <div class="modalCate-box bg-white rounded-2xl p-10">
+              <h3
+                id="modalCateTitle"
+                class="text-black text-3xl font-bold mb-3"
+              ></h3>
+              <p id="modalCateDescription" class="text-black mb-2"></p>
+              <p id="modalCatePrice" class="text-black mb-2"></p>
+              <p id="modalCateRating" class="text-black mb-2"></p>
+              <button class="bg-blue-500 px-3 py-2 text-white rounded-xl mb-2">
+                Add to cart
+              </button>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+              <button>close</button>
+            </form>
+          </dialog>
+          <dialog id="my_modal_2" class="modal">
+            <div class="modal-box bg-white rounded-2xl p-10">
+              <h3
+                id="modalTitle"
+                class="text-black text-3xl font-bold mb-3"
+              ></h3>
+              <p id="modalDescription" class="text-black mb-2"></p>
+              <p id="modalPrice" class="text-black mb-2"></p>
+              <p id="modalRating" class="text-black mb-2"></p>
+              <button class="bg-blue-500 px-3 py-2 text-white rounded-xl mb-2">
+                Add to cart
+              </button>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+              <button>close</button>
+            </form>
+          </dialog>
+          <!-- </ul> -->
         </div>
       </div>
 
